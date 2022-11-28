@@ -20,7 +20,16 @@
     </header>
     <section class="about">
         <h1>Talk. Listen. Get inspired by every minute of it.</h1>
-        .
+        <div class="columns-container">
+            <div class="column">
+                <img src="../assets/scribbles/thought.svg" alt="" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+            </div>
+            <div class="column">
+                <img src="../assets/scribbles/bulb.svg" alt="" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -113,12 +122,34 @@ header {
 .about {
     text-align: center;
     display: flex;
-    justify-content: center;
+    align-items: center;
     width: 100%;
+    flex-direction: column;
+    padding: 20px;
 
     h1 {
         margin-top: 140px;
         max-width: 780px;
+    }
+
+    .columns-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        gap: 100px;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
+
+        .column {
+            max-width: 450px;
+
+            img {
+                width: 80%;
+                max-width: 275px;
+            }
+        }
     }
 }
 </style>
