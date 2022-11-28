@@ -31,6 +31,17 @@
             </div>
         </div>
     </section>
+    <section class="quote">
+        <h2>One of the best daily podcasts that covers every topic on Spotify.</h2>
+        <div class="row">
+            <img class="avatar" src="../assets/images/avatar.webp" alt="avatar" />
+            John Smith,
+            <div class="wrapper">
+                <img class="spotify" src="../assets/icons/spotify-black.svg" alt="Spotify" />
+                <p>Social Community Manager</p>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup lang="ts">
@@ -149,6 +160,58 @@ header {
                 width: 80%;
                 max-width: 275px;
             }
+        }
+    }
+}
+.quote {
+    margin-inline: auto;
+    width: 90%;
+    max-width: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    padding: 40px;
+    background: var(--skinny);
+    flex-direction: column;
+
+    h2 {
+        max-width: 650px;
+        text-align: center;
+        margin-top: 100px;
+
+        &::before {
+            content: '“';
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -150%);
+            font-size: 96px;
+            color: var(--red);
+        }
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin-top: 40px;
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        p {
+            font-weight: bold;
+        }
+
+        .avatar {
+            width: 48px;
+        }
+        .spotify {
+            width: 30px;
+            display: inline-block;
         }
     }
 }
