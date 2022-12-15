@@ -42,6 +42,7 @@
             </div>
         </div>
     </section>
+    <p>whatever</p>
 </template>
 
 <script setup lang="ts">
