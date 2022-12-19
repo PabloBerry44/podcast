@@ -2,7 +2,7 @@
     <header>
         <h1 class="hero">Your Daily<br /><span>Podcast</span></h1>
         <p class="subtitle large">We cover all kinds of categories and a weekly special guest.</p>
-        <Button name="SUBSCRIBE" class="dark" />
+        <Button name="SUBSCRIBE" class="dark shadow" />
         <section class="covers">
             <img src="../assets/images/cover-1.webp" alt="empty-alt" />
             <img src="../assets/images/cover-2.webp" alt="empty-alt" />
@@ -83,16 +83,55 @@
         </div>
 
         <div class="arrows" style="display: flex; gap: 30px; margin-top: 50px">
-            <div class="arrow-left" @click="changeTestimonial(true)">LEFT</div>
-            <div class="arrow-right" @click="changeTestimonial(false)">RIGHT</div>
+            <img @click="changeTestimonial(true)" src="../assets/icons/arrow-right.svg" alt="LEFT" />
+            <img @click="changeTestimonial(false)" src="../assets/icons/arrow-right.svg" alt="RIGHT" />
         </div>
     </section>
 
-    <div class="es" style="height: 300px"></div>
+    <section class="features">
+        <h2>Membership benefits</h2>
+        <p class="large">Become our sponsor and get all benefits</p>
+        <div class="feature-grid">
+            <div class="feature">
+                <img src="../assets/scribbles/scribble.svg" alt="scribble" />
+                <p class="title">Topic by Request</p>
+                <p class="text">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="feature">
+                <img src="../assets/scribbles/shining-stars.svg" alt="scribble" />
+                <p class="title">Exclusive Content</p>
+                <p class="text">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="feature">
+                <img src="../assets/scribbles/face-1.svg" alt="scribble" />
+                <p class="title">Join the Community</p>
+                <p class="text">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="feature">
+                <img src="../assets/scribbles/face-5.svg" alt="scribble" />
+                <p class="title">Livestreaming Access</p>
+                <p class="text">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="feature">
+                <img src="../assets/scribbles/fire.svg" alt="scribble" />
+                <p class="title">Exclusive Episodes & Merch</p>
+                <p class="text">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="feature">
+                <img src="../assets/scribbles/star.svg" alt="scribble" />
+                <p class="title">And much more!</p>
+                <p class="text">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
+            </div>
+        </div>
+        <Button name="SEE PRICING" class="dark shadow" />
+    </section>
+
+    <Footer />
 </template>
 
 <script setup lang="ts">
 import Button from '../components/Button.vue'
+import Footer from '../components/Footer.vue'
 import { reactive } from 'vue'
 
 const carouselState = reactive({
@@ -150,8 +189,6 @@ header {
     button {
         margin-top: 60px;
         padding: 24px 48px;
-
-        box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.192);
     }
 
     .covers {
@@ -279,6 +316,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 140px;
+    padding-bottom: 100px;
 
     h2 {
         margin-top: 140px;
@@ -294,16 +333,17 @@ header {
         gap: 5vw;
         overflow-x: hidden;
         width: 100%;
-        height: 300px;
+        height: 420px;
         align-items: center;
+        position: relative;
+        justify-content: center;
 
         .testimonial {
             background: white;
             padding: 40px;
-            min-width: 90vw;
+            width: 350px;
             display: flex;
             flex-direction: column;
-            margin-left: 5vw;
             position: absolute;
 
             .text {
@@ -337,6 +377,70 @@ header {
                 }
             }
         }
+    }
+
+    .arrows {
+        img {
+            cursor: pointer;
+
+            &:first-child {
+                transform: rotateZ(180deg);
+            }
+        }
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+
+    h2 {
+        margin-top: 140px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    .feature-grid {
+        display: grid;
+        max-width: max-content;
+        margin-top: 100px;
+        gap: 40px;
+
+        @media (min-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 1400px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 373px;
+            text-align: center;
+
+            .title {
+                font-size: 22px;
+                font-weight: 700;
+                margin-top: 30px;
+            }
+
+            .text {
+                font-size: 16px;
+                font-weight: 500;
+                margin-top: 10px;
+            }
+        }
+    }
+    button {
+        margin-top: 100px;
+        margin-bottom: 140px;
     }
 }
 

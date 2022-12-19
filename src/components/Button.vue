@@ -23,4 +23,8 @@ button {
     background: black;
     color: white;
 }
+
+.shadow {
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.192);
+}
 </style>
