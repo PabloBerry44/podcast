@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="hero">Your Daily<br /><span>Podcast</span></div>
+        <h1 class="hero">Your Daily<br /><span>Podcast</span></h1>
         <p class="subtitle large">We cover all kinds of categories and a weekly special guest.</p>
         <Button name="SUBSCRIBE" class="dark" />
         <section class="covers">
@@ -18,8 +18,9 @@
         </section>
         <img class="loop" src="../assets/scribbles/loop.svg" alt="empty-alt" />
     </header>
+
     <section class="about">
-        <h1>Talk. Listen. Get inspired by every minute of it.</h1>
+        <h2>Talk. Listen. Get inspired by every minute of it.</h2>
         <div class="columns-container">
             <div class="column">
                 <img src="../assets/scribbles/thought.svg" alt="" />
@@ -32,21 +33,90 @@
         </div>
     </section>
     <section class="quote">
-        <h2>One of the best daily podcasts that covers every topic on Spotify.</h2>
-        <div class="row">
-            <img class="avatar" src="../assets/images/avatar.webp" alt="avatar" />
-            John Smith,
-            <div class="wrapper">
-                <img class="spotify" src="../assets/icons/spotify-black.svg" alt="Spotify" />
-                <p>Social Community Manager</p>
-            </div>
+        <h3>One of the best daily podcasts that covers every topic on Spotify.</h3>
+        <p>Social Community Manager at Spotify</p>
+    </section>
+
+    <section class="testimonials">
+        <h2>What our listeners say</h2>
+        <p class="large subtitle">Their experience throughout every platform</p>
+        <div class="container">
+            <Transition :name="carouselState.transitionName">
+                <div class="testimonial" v-if="carouselState.currentTestimonial == 0">
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectet piscing elit, sed do eiusmod tempor incidi ut labore et
+                        dolore magna aliqua.
+                    </p>
+                    <div class="person-row">
+                        <img class="person-image" src="../assets/images/luna.webp" alt="person image" />
+                        <span class="name">Luna lovegood,</span>
+                        <img class="company-logo" src="../assets/icons/spotify.svg" alt="spotify logo" />
+                    </div>
+                </div>
+                <div class="testimonial" v-else-if="carouselState.currentTestimonial == 1">
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectet piscing elit, sed do eiusmod tempor incidi ut labore et
+                        dolore magna aliqua.
+                    </p>
+                    <div class="person-row">
+                        <img class="person-image" src="../assets/images/emily.webp" alt="person image" />
+                        <span class="name">Emily Blunt,</span>
+                        <img
+                            class="company-logo"
+                            src="../assets/icons/google-podcasts.svg"
+                            alt="google podcasts logo"
+                        />
+                    </div>
+                </div>
+                <div class="testimonial" v-else-if="carouselState.currentTestimonial == 2">
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectet piscing elit, sed do eiusmod tempor incidi ut labore et
+                        dolore magna aliqua.
+                    </p>
+                    <div class="person-row">
+                        <img class="person-image" src="../assets/images/mia.webp" alt="person image" />
+                        <span class="name">Mia Winters,</span>
+                        <img class="company-logo" src="../assets/icons/youtube.svg" alt="youtube logo" />
+                    </div>
+                </div>
+            </Transition>
+        </div>
+
+        <div class="arrows" style="display: flex; gap: 30px; margin-top: 50px">
+            <div class="arrow-left" @click="changeTestimonial(true)">LEFT</div>
+            <div class="arrow-right" @click="changeTestimonial(false)">RIGHT</div>
         </div>
     </section>
-    <p>whatever</p>
+
+    <div class="es" style="height: 300px"></div>
 </template>
 
 <script setup lang="ts">
 import Button from '../components/Button.vue'
+import { reactive } from 'vue'
+
+const carouselState = reactive({
+    currentTestimonial: 0,
+    transitionName: 'slide-right',
+})
+
+function changeTestimonial(next: boolean) {
+    if (next) {
+        carouselState.transitionName = 'slide-right'
+        if (carouselState.currentTestimonial == 2) {
+            carouselState.currentTestimonial = 0
+        } else {
+            carouselState.currentTestimonial++
+        }
+    } else {
+        carouselState.transitionName = 'slide-left'
+        if (carouselState.currentTestimonial == 0) {
+            carouselState.currentTestimonial = 2
+        } else {
+            carouselState.currentTestimonial--
+        }
+    }
+}
 </script>
 
 <style scoped lang="scss">
@@ -74,6 +144,7 @@ header {
         color: var(--grey);
         max-width: 300px;
         text-align: center;
+        font-weight: 500;
     }
 
     button {
@@ -139,7 +210,7 @@ header {
     flex-direction: column;
     padding: 20px;
 
-    h1 {
+    h2 {
         margin-top: 140px;
         max-width: 780px;
     }
@@ -176,7 +247,7 @@ header {
     background: var(--skinny);
     flex-direction: column;
 
-    h2 {
+    h3 {
         max-width: 650px;
         text-align: center;
         margin-top: 100px;
@@ -190,30 +261,108 @@ header {
             color: var(--red);
         }
     }
-    .row {
+
+    p {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
         gap: 10px;
         margin-top: 40px;
+        text-align: center;
+    }
+}
 
-        .wrapper {
+.testimonials {
+    background: var(--blueish);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        margin-top: 140px;
+    }
+    .subtitle {
+        margin-top: 20px;
+    }
+
+    .container {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        gap: 5vw;
+        overflow-x: hidden;
+        width: 100%;
+        height: 300px;
+        align-items: center;
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            min-width: 90vw;
             display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        p {
-            font-weight: bold;
-        }
+            flex-direction: column;
+            margin-left: 5vw;
+            position: absolute;
 
-        .avatar {
-            width: 48px;
-        }
-        .spotify {
-            width: 30px;
-            display: inline-block;
+            .text {
+                position: relative;
+                margin-top: 92px;
+                font-size: 22px;
+                font-weight: 500;
+
+                &::before {
+                    content: '“';
+                    position: absolute;
+                    transform: translateY(-75%);
+                    font-size: 96px;
+                    color: var(--red);
+                    font-weight: 600;
+                }
+            }
+
+            .person-row {
+                margin-top: 32px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+
+                .person-image {
+                    width: 48px;
+                }
+                .company-logo {
+                    height: 22px;
+                }
+            }
         }
     }
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: all 0.25s ease-out;
+}
+.slide-right-enter-from {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.slide-right-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+    transition: all 0.25s ease-out;
+}
+.slide-left-enter-from {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.slide-left-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
 }
 </style>
