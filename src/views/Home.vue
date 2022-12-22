@@ -126,6 +126,152 @@
         <Button name="SEE PRICING" class="dark shadow" />
     </section>
 
+    <section class="episodes">
+        <h2>Recent Episodes</h2>
+        <p class="subtitle">Available on your favorite platform</p>
+
+        <div class="episodes-grid">
+            <div class="episode accent">
+                <div class="main-content">
+                    <img src="../assets/images/cover-1.webp" alt="episode cover" />
+                    <div class="content">
+                        <p class="medium">Eps. 6</p>
+                        <p class="title">Pandemic Becoming Endemic</p>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="hashtags">
+                        <div class="hashtag">covid-19</div>
+                        <div class="hashtag">health</div>
+                    </div>
+                    <div class="hosted-by">
+                        <span>Hosted by:</span>
+                        <img src="../assets/images/avatar-1.png" alt="lana" />
+                        <img class="front" src="../assets/images/avatar-2.png" alt="lana" />
+                    </div>
+                </div>
+            </div>
+            <div class="episode">
+                <div class="main-content">
+                    <img src="../assets/images/cover-2.webp" alt="episode cover" />
+                    <div class="content">
+                        <p class="medium">Eps. 5</p>
+                        <p class="title">Tesla Autopilot Controversy</p>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="hashtags">
+                        <div class="hashtag">automation</div>
+                        <div class="hashtag">tech</div>
+                    </div>
+                    <div class="hosted-by">
+                        <span>Hosted by:</span>
+                        <img src="../assets/images/avatar-1.png" alt="lana" />
+                        <img class="front" src="../assets/images/avatar-2.png" alt="lana" />
+                    </div>
+                </div>
+            </div>
+            <div class="episode">
+                <div class="main-content">
+                    <img src="../assets/images/cover-3.webp" alt="episode cover" />
+                    <div class="content">
+                        <p class="medium">Eps. 4</p>
+                        <p class="title">Women's Rights? Is it alright?</p>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="hashtags">
+                        <div class="hashtag">women's rights</div>
+                    </div>
+                    <div class="hosted-by">
+                        <span>Hosted by:</span>
+                        <img src="../assets/images/avatar-1.png" alt="lana" />
+                        <img class="front" src="../assets/images/avatar-2.png" alt="lana" />
+                    </div>
+                </div>
+            </div>
+            <div class="episode accent">
+                <div class="main-content">
+                    <img src="../assets/images/cover-4.webp" alt="episode cover" />
+                    <div class="content">
+                        <p class="medium">Eps. 3</p>
+                        <p class="title">How to Deal with Self–Confidence</p>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="hashtags">
+                        <div class="hashtag">self-esteem</div>
+                        <div class="hashtag">health</div>
+                    </div>
+                    <div class="hosted-by">
+                        <span>Hosted by:</span>
+                        <img src="../assets/images/avatar-1.png" alt="lana" />
+                        <img class="front" src="../assets/images/avatar-2.png" alt="lana" />
+                    </div>
+                </div>
+            </div>
+            <div class="episode accent">
+                <div class="main-content">
+                    <img src="../assets/images/cover-5.webp" alt="episode cover" />
+                    <div class="content">
+                        <p class="medium">Eps. 2</p>
+                        <p class="title">Type of Social Classes of People</p>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="hashtags">
+                        <div class="hashtag">social class</div>
+                        <div class="hashtag">wealth</div>
+                    </div>
+                    <div class="hosted-by">
+                        <span>Hosted by:</span>
+                        <img src="../assets/images/avatar-1.png" alt="lana" />
+                        <img class="front" src="../assets/images/avatar-2.png" alt="lana" />
+                    </div>
+                </div>
+            </div>
+            <div class="episode">
+                <div class="main-content">
+                    <img src="../assets/images/cover-6.webp" alt="episode cover" />
+                    <div class="content">
+                        <p class="medium">Eps. 1</p>
+                        <p class="title">Are you a Perplexed Mind Person?</p>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="hashtags">
+                        <div class="hashtag">mind-behaviour</div>
+                        <div class="hashtag">health</div>
+                    </div>
+                    <div class="hosted-by">
+                        <span>Hosted by:</span>
+                        <img src="../assets/images/avatar-1.png" alt="lana" />
+                        <img class="front" src="../assets/images/avatar-2.png" alt="lana" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <Button class="dark shadow" name="BROWSE ALL EPISODES" />
+    </section>
+
     <Footer />
 </template>
 
@@ -438,6 +584,145 @@ header {
             }
         }
     }
+    button {
+        margin-top: 100px;
+        margin-bottom: 140px;
+    }
+}
+
+.episodes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background: var(--skinny);
+    padding: 15px;
+
+    h2 {
+        margin-top: 140px;
+    }
+    .subtitle {
+        margin-top: 20px;
+    }
+
+    .episodes-grid {
+        display: grid;
+        gap: 20px;
+        margin-top: 100px;
+
+        @media (min-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .episode {
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            border: 2px solid black;
+            border-radius: 12px;
+            max-width: 570px;
+            background: white;
+            width: 100%;
+
+            &.accent {
+                .title {
+                    color: var(--red);
+                }
+                -webkit-box-shadow: 10px 9px 0px 0px rgba(129, 173, 200, 1);
+                -moz-box-shadow: 10px 9px 0px 0px rgba(129, 173, 200, 1);
+                box-shadow: 10px 9px 0px 0px rgba(129, 173, 200, 1);
+            }
+
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                img {
+                    width: 100%;
+                }
+
+                @media (min-width: 600px) {
+                    flex-direction: row;
+
+                    img {
+                        max-width: 166px;
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+
+                    .medium {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: var(--red);
+                        margin-top: 17.5px;
+                    }
+
+                    .title {
+                        font-size: 22px;
+                        font-weight: 700;
+                        margin-top: 4px;
+                    }
+
+                    .description {
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-top: 15px;
+                        border-top: 1px solid gray;
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            .bottom {
+                margin-top: 20px;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                gap: 15px;
+
+                .hashtags {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 6px;
+
+                    .hashtag {
+                        padding: 6px 12px;
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: gray;
+                        border: 1px solid gray;
+                        border-radius: 4px;
+                    }
+                }
+
+                .hosted-by {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 12px;
+                    font-weight: 700;
+                    color: rgb(94, 94, 94);
+
+                    img {
+                        border-radius: 50%;
+                        &:first-of-type {
+                            margin-left: 10px;
+                        }
+
+                        &.front {
+                            transform: translateX(-7px);
+                            border: 2px solid white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     button {
         margin-top: 100px;
         margin-bottom: 140px;
